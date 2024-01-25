@@ -16,11 +16,11 @@ function subStock()
         $param["sDel"] = 1;
     }
 
-    if (! $param["sPage"]) {
+    if (!$param["sPage"]) {
         $param["sPage"] = 1;
     }
 
-    if (! $param["orderBy"]) {
+    if (!$param["orderBy"]) {
         $param["orderBy"] = 'STOCKNO';
         $param["orderTo"] = 'DESC';
     }
@@ -83,7 +83,7 @@ function subStockEditComplete()
     $param["sInsDTFrom"] = htmlspecialchars($_REQUEST['sInsDTFrom']);
     $param["sInsDTTo"] = htmlspecialchars($_REQUEST['sInsDTTo']);
     $param["sCharge"] = htmlspecialchars($_REQUEST['sCharge']);
-    $param["sRank"] = $_REQUEST['sRank'];
+    $param["sRank"] = $_REQUEST['sRank'] + 1;
     $param["sArticle"] = htmlspecialchars($_REQUEST['sArticle']);
     $param["sArticleFuri"] = htmlspecialchars($_REQUEST['sArticleFuri']);
     $param["sAreaFrom"] = htmlspecialchars($_REQUEST['sAreaFrom']);
@@ -103,7 +103,7 @@ function subStockEditComplete()
 
     $param["stockNo"] = mysqli_real_escape_string($conn, $_REQUEST['stockNo']);
     $param["charge"] = mysqli_real_escape_string($conn, $_REQUEST['charge']);
-    $param["rank"] = mysqli_real_escape_string($conn, $_REQUEST['rank']);
+    $param["rank"] = mysqli_real_escape_string($conn, $_REQUEST['rank'] + 1);
     $param["article"] = mysqli_real_escape_string($conn, $_REQUEST['article']);
     $param["articleFuri"] = mysqli_real_escape_string($conn, $_REQUEST['articleFuri']);
     $param["room"] = mysqli_real_escape_string($conn, $_REQUEST['room']);

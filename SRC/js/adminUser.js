@@ -22,6 +22,7 @@ function fnAdminUserEditCheck() {
 		return;
 	}
 
+	check = form.userNo.value;
 	tmp = form.password.value;
 	if (check.length == 0 && tmp.length == 0) {
 		alert('PASSを入力してください');
